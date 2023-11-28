@@ -1,0 +1,46 @@
+#include<stdio.h>
+void main(){
+ int n,pos,i;
+ printf("Enter the number of nodes:");
+ scanf("%d",&n);
+ int tree[n];
+ printf("Enter the values of nodes:");
+ for(i=1;i<=n;i++){
+  scanf("%d",&tree[i]);
+ }
+ char choice='y';
+ while(choice=='y'){
+  printf("Enter the position of the value is to be displayed:");
+  scanf("%d",&pos);
+  if(pos==0){
+   printf("NO ELEMENT\n");
+  }
+ else{
+  printf("Value in positon %d is %d\n",pos,tree[pos]);
+  if(pos/2==0){
+   printf("NO PARENT\n");
+  }
+  else{
+   printf("Parent is in node %d \n",(pos/2));
+   printf("Parent is %d\n",tree[pos/2]);
+  }
+  if((2*pos)>n){
+   printf("NO LEFT CHILD\n");
+  }
+  else{
+   printf("Left child is in node %d\n",(2*pos));
+   printf("Left child is %d\n",tree[2*pos]);   
+  }
+  if((2*pos+1)>n){
+   printf("NO RIGHT CHILD\n");
+  }
+  else{
+   printf("Right child is in node %d\n",(2*pos+1));
+   printf("Right child is %d\n",tree[2*pos+1]);
+  }
+ }
+  printf("DO YOU WANT TO CONTINUE(Y/N)?");
+  scanf(" %c",&choice);
+  printf("\n");
+ }
+}
