@@ -1,0 +1,89 @@
+#include<stdio.h>
+void main()
+{
+ int limit,i,j,temp,left,right,middle,x,count=0,flag=0;
+ count+=2;
+ printf("enter the limit:");
+ scanf("%d",&limit);
+ count++;
+ int a[limit];
+ printf("enter the values:");
+ for(i=0;i<limit;i++)
+ {
+  count++;
+  scanf("%d",&a[i]);
+  count++;
+ }
+ printf("the sorted array is:");
+ for(i=0;i<limit;i++)
+ {
+  count++;
+  for(j=i+1;j<limit;j++)
+  { 
+   count++;
+   if(a[i]>a[j])
+   {
+    count++;
+    temp=a[i]; 
+    count++;
+    a[i]=a[j];
+    count++;
+    a[j]=temp;
+    count++;
+    
+   }
+  }
+ }
+ for(i=0;i<limit;i++)
+ {
+  count++;
+  printf("%d\t",a[i]);
+  count++;
+ }
+ printf("\nenter the value to be checked:");
+ scanf("%d",&x);
+ count++;
+ left=0;
+ count++;
+ right=limit-1;
+ count++;
+ while(left<=right)
+  {
+  count++;
+  middle=(left+right)/2;
+  count++;
+  if(x<a[middle])
+  {
+   count++;
+   right=middle-1;
+   count++;
+  }
+  else if(x>a[middle])
+  {
+   count++;
+   left=middle+1;
+   count++;
+  }
+  else
+  {
+   flag++;
+   count++;
+   break;
+   count++;
+  }
+  }
+  if(flag>0)
+  {
+   count++;
+   printf("%d is found in the array\n",x);
+   count++;
+  }
+  else
+  {
+   printf("%d is not found in the array\n",x);
+   count++;
+  }
+  count+=2;
+  printf("space complexity=%d",(40+(4*limit)));
+  printf("\ntime complexity=%d\n",count);
+ }
