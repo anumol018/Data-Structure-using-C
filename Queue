@@ -1,0 +1,80 @@
+#include<stdio.h>
+int rear=-1,front=0,MAX_SIZE,item,a[50];
+void enqueue();
+void dequeue();
+void peek();
+void display();
+void main(){
+ int choice;
+ printf("Enter the limit of the queue:");
+ scanf("%d",&MAX_SIZE);
+ while(choice!=5){
+  printf("Enter the operation to be performed:\n");
+  printf("1.Enqueue\t2.Dequeue\t3.peek\t4.Display\n");
+  printf("choice:");
+  scanf("%d",&choice);
+  switch(choice){
+      case 1:{
+         enqueue();
+         break;
+      }
+      case 2:{
+         dequeue();
+         break;
+      }
+      case 3:{
+         peek();
+         break;
+      }
+      case 4:{
+         display();
+         break;
+      }
+      default :{
+         printf("EXIT");
+      }
+   }
+   printf("\n");
+  }
+}
+void enqueue(){
+ if(rear==MAX_SIZE-1){
+  printf("OVERFLOW\n");
+ }
+ else{
+  rear++;
+  printf("Enter the value:");
+  scanf("%d",&item);
+  a[rear]=item;
+  }
+ }
+void dequeue(){
+ if(rear<front){
+ printf("UNDERFLOW\n");
+ }
+ else{
+  a[front]=item;
+  front++;
+ }
+}
+void peek(){
+ if(rear<front){
+  printf("UNDERFLOW\n");
+ }
+ else{
+   printf("Front=%d\n",a[front]);
+  }
+ }
+void display(){
+ if(rear<front){
+  printf("UNDERFLOW\n");
+ }
+ else{
+  printf("Elements in queue are:");
+  for(int i=front;i<=rear;i++){
+   printf("%d\t",a[i]);
+  }
+  printf("\n");
+ }
+}
+ 
