@@ -1,0 +1,81 @@
+#include<stdio.h>
+int item,MAX_SIZE,top=-1,a[50];
+void push();
+void pop();
+void peek();
+void display();
+void main(){
+ int choice;
+ printf("Enter the limit of stack:");
+ scanf("%d",&MAX_SIZE);
+ while(choice!=5){
+  printf("Enter the operation to be performed:\n");
+  printf("1.push\t2.pop\t3.peek\t4.display\n");
+  printf("Choice:");
+  scanf("%d",&choice);
+  switch(choice){
+   case 1:{
+
+      push();
+      break;
+      }
+   case 2:{
+      pop();
+      break;
+      }
+   case 3:{
+      peek();
+      break;
+      }
+   case 4:{
+      display();
+      break;
+      }
+   default:{
+      printf("EXIT\n");
+      }
+    }
+   printf("\n");
+  }
+ }
+ void push(){
+  if(top>=(MAX_SIZE-1)){
+  printf("OVERFLOW\n");
+   }
+   else{
+     top++;
+   printf("Enter the value:");
+   scanf("%d",&item);
+   a[top]=item;
+   }
+ }
+ void pop(){ 
+  if(top==-1){
+   printf("UNDERFLOW\n");
+  }
+  else{
+   item=a[top];
+   top--;
+  }
+ }
+ void peek(){
+  if(top==-1){
+  printf("UNDERFLOW\n");
+  }
+  else{
+   printf("The top most element=%d\n",a[top]);
+  }
+  }
+ void display(){
+  if(top==-1){
+   printf("UNDERFLOW\n");
+  }
+  else{
+  printf("Elements in the stack are:");
+  for(int i=0;i<=top;i++){
+   printf("%d\t",a[i]);
+   }
+   printf("\n");
+  }
+ }
+ 
