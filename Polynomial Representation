@@ -1,0 +1,32 @@
+#include<stdio.h>
+void main()
+{
+ int limit,i,k=1;
+ struct polynominal
+      {
+       int coeff;
+       int expo;
+      }a[50];
+ printf("enter the number of terms:");
+ scanf("%d",&limit);
+ printf("enter the coefficent and exponent of the polynomial:\n");
+ for(i=0;i<limit;i++)
+ {
+  printf("the %d term:",k);
+  scanf("%d%d",&a[i].coeff,&a[i].expo);
+  k++;
+ }
+ printf("the polynomial is:");
+ for(i=0;i<limit;i++)
+ {
+  if(i<(limit-1))
+  {
+   printf("%dx^%d+",a[i].coeff,a[i].expo);
+  }
+  else
+  {
+  printf("%dx^%d\n",a[i].coeff,a[i].expo);
+  }
+ }
+}
+ 
