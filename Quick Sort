@@ -1,0 +1,50 @@
+#include<stdio.h>
+int i,j,p,r,pivot,temp,n;
+int partition(int a[50],int p,int r);
+void quicksort(int a[50],int p,int r);
+void main(){
+ int a[50];
+ printf("Enetr the limit:");
+ scanf("%d",&n);
+ printf("Enter the values:");
+ for(i=0;i<n;i++){
+  scanf("%d",&a[i]);
+ }
+ p=0;
+ r=n-1;
+ quicksort(a,p,r);
+ printf("The sorted array is:");
+ for(i=0;i<n;i++){
+  printf("%d\t",a[i]);
+ }
+ printf("\n");
+}
+int partition(int a[50],int p,int r){
+ pivot=a[p];
+ i=p,j=r;
+ while(i<j){
+  while(a[i]<=pivot && i<r){
+            i++;
+   }
+   while(a[j]>pivot){
+            j--;
+   }
+   if(i<j){
+    temp=a[i];
+    a[i]=a[j];
+    a[j]=temp;
+   }
+  }
+ temp=a[j];
+ a[j]=a[p];
+ a[p]=temp;
+ return j;
+}
+
+void quicksort(int a[50],int p,int r){
+ if(p<r){
+  j=partition(a,p,r);
+  quicksort(a,p,j);
+  quicksort(a,r,j+1);
+  }
+ }
