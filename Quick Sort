@@ -10,14 +10,15 @@ void main(){
  for(i=0;i<n;i++){
   scanf("%d",&a[i]);
  }
-  printf("Array before sorting");
+  printf("Array before sorting:\n");
  for(i=0;i<n;i++){
   printf("%d\t",a[i]);
  }
+ printf("\n");
  p=0;
  r=n-1;
  quicksort(a,p,r);
- printf("Araay after sorting ");
+ printf("Araay after sorting:\n ");
  for(i=0;i<n;i++){
   printf("%d\t",a[i]);
  }
