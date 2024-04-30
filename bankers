@@ -9,7 +9,7 @@ void main(){
  printf("Enter the number of resources : ");
  scanf("%d", &r);
  
- int alloc[n][r],max[n][r],available[n],need[n][r],safeseq[n],visited[n];
+ int alloc[n][r],max[n][r],available[r],need[n][r],safeseq[n],visited[n];
  
  printf("Enter the available resources:");
  for(i=0;i<r;i++){
@@ -22,7 +22,7 @@ void main(){
   for(j=0;j<r;j++){
    scanf("%d",&alloc[i][j]);
   }
-  printf("Enter the max of process %d:",i);
+  printf("Enter the max of processP[%d]:",i);
   for(j=0;j<r;j++){
    scanf("%d",&max[i][j]);
   }
@@ -62,7 +62,7 @@ void main(){
       excecuted++;
      }
     }
-     if(excecuted==r&&visited[i]==0){
+     if((excecuted==r)&&(visited[i]==0)){
        for(j=0;j<r;j++){
        available[j]+=alloc[i][j];
       }
