@@ -16,7 +16,7 @@ void main(){
   scanf("%d",&available[i]);
  }
  
- for(i=1;i<=n;i++){
+ for(i=0;i<n;i++){
  visited[i]=0;
   printf("Enter the allocation of process P[%d]:",i);
   for(j=0;j<r;j++){
@@ -31,24 +31,24 @@ void main(){
    need[i][j]=max[i][j]-alloc[i][j];
   }
  }
-  printf("Allocation\tMax\tNeed\tAvailable\n");
- for(i=1;i<=n;i++){
+  printf("  Allocation\tMax\tNeed\tAvailable\n");
+ for(i=0;i<n;i++){
  printf("P[%d]\t",i);
  for(j=0;j<r;j++){
   printf("%d ",alloc[i][j]);
  }
-  printf("\t");
+  printf("\t\t");
   for(j=0;j<r;j++){
    printf("%d ",max[i][j]);
   }
-  printf("\t");
+  printf("\t\t");
   for(j=0;j<r;j++){
    printf("%d ",need[i][j]);
   }
   if(i==0){
-   printf("\t");
+   printf("\t\t");
    for(j=0;j<r;j++){
-   printf("%d",available[i]);
+   printf("%d",available[j]);
    }
   }
   printf("\n");
@@ -84,4 +84,5 @@ void main(){
  }
  printf(">");
  printf("Safe state exist\n");
+ 
 }
